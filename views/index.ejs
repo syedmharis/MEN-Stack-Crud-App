@@ -65,12 +65,13 @@ table th {
       </tr>
                       </thead>
     <tbody>
+      <%console.log(bdata)%>
       <% for (let d of bdata) {%>
       <tr>
         <td><%=d.title %></td>
         <td><%=d.content %></td>
         <td><%=d.blog_cat %></td>
-        <td><%=d.author %></td>
+        <td><%=d.authorName %></td>
         <td><%=d.likes %></td>
         <td>
           <a href="/edit/<%=d.id%>/editForm" class="btn btn-primary">Edit</a>

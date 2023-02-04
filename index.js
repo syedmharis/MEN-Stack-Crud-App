@@ -14,10 +14,14 @@ const {
 app.set("view engine", "ejs");
 app.use(express.urlencoded({extended:true}));
 
-app.get("/",async(req, res) => {
+app.get("/", async(req,res)=>{
     const data = await blog_obj.find({});
-    res.render("index.ejs",{bdata:data});
-});
+    for (const blog of data) {
+        const author = await author_obj.findOne(blog.author);
+        blog.authorName = author.name;
+    }
+    res.render("index.ejs",{bdata:data})
+})
 
 app.get("/addnew",async(req, res) => {
     const data3 = await author_obj.find({});

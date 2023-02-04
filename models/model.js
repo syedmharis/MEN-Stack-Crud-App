@@ -11,12 +11,10 @@ const blog_obj = mongoose.model("Blog",new mongoose.Schema({
     content: String,
     blog_cat: String,
     likes:String,
-    author:[
-        {
-            type:mongoose.Schema.Types.ObjectId,
-            ref:'author_obj'
-        }
-    ]
+    author: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Authors"
+    }
 }));
 
 

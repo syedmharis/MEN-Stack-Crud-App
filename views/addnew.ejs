@@ -62,14 +62,14 @@ table th {
                 <label class="form-label">Blog Catergory</label>
                 <input type="text" class="form-control" name="blog_cat">
             </div> 
-            <!-- <%console.log(adata)%> -->
+            
 
             <div class="mb-3">
               <label class="form-label">Blog Author</label>
-              <select class="form-control" id="volume">
+              <select name="author" class="form-control" id="volume">
                 <option value="None">Select Author</option>
                 <% for (let a of adata) { %>
-                  <option value="<%= a.name %>"><%= a.name %></option>
+                  <option value="<%= a._id %>"><%= a.name %></option>
                 <% } %>
               </select>
             </div>
