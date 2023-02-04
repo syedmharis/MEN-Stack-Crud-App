@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <style>
+      html,
+body,
+.intro {
+  height: 100%;
+}
+
+table td,
+table th {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  </head>
+  
+  <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">Blog Space</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/addnew">Post New</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/authors">Authors</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/addauthor">New Author</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="bg-image h-100" style="background-image: url('https://mdbootstrap.com/img/Photos/new-templates/tables/img2.jpg');">
+    <div class="mask d-flex align-items-center h-100" style="background-color: rgba(0,0,0,.25);">
+    <div class="container mt-4 mb-4"><h1>New Blog</h1></div>
+    <div class="card w-100 h-80 p-5 m-5">
+        <form action="/save" method="post">
+            <div class="mb-3">
+                <label class="form-label">Blog Title</label>
+                <input type="text" class="form-control" name="title">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Blog Content</label>
+                <input type="text" class="form-control" name="content">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Blog Catergory</label>
+                <input type="text" class="form-control" name="blog_cat">
+            </div> 
+            <!-- <%console.log(adata)%> -->
+
+            <div class="mb-3">
+              <label class="form-label">Blog Author</label>
+              <select class="form-control" id="volume">
+                <option value="None">Select Author</option>
+                <% for (let a of adata) { %>
+                  <option value="<%= a.name %>"><%= a.name %></option>
+                <% } %>
+              </select>
+            </div>
+            
+
+            <div class="mb-3">
+              <label class="form-label">Blog Likes</label>
+              <input type="text" class="form-control" name="likes">
+          </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <a href="/back" class="btn btn-danger">Back</a>
+        </form>
+    </div>
+    </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+
+  </body>
+</html>
