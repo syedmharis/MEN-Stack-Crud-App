@@ -1,6 +1,12 @@
 # Crud App using MongoDb Express Node 
 <p>It has one to many relationship implemented.</p>
 
+# Getting Started
+
+- Download this repository
+- Open project in command prompt
+- To run, use command "npm start" in terminal 
+
 ## Interface's
 
 # Main Page
